@@ -1,0 +1,5 @@
+package com.attornatus.project.domain.repository;
+
+public interface PessoaRepository {
+
+}
