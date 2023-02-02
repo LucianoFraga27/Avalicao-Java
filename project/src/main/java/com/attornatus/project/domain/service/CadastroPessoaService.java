@@ -6,6 +6,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.attornatus.project.domain.model.Pessoa;
 import com.attornatus.project.domain.repository.PessoaRepository;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 @Service
 public class CadastroPessoaService {
 	
