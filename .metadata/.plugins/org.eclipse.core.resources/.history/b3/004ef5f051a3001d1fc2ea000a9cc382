@@ -1,0 +1,12 @@
+package com.attornatus.project.domain.service;
+
+import org.springframework.stereotype.Service;
+
+import com.attornatus.project.domain.repository.PessoaRepository;
+
+@Service
+public class CadastroPessoaService {
+	
+	private PessoaRepository pessoaRepository;
+	
+}
