@@ -1,0 +1,5 @@
+package com.attornatus.project.domain.model;
+
+public class Pessoa {
+
+}
