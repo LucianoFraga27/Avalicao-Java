@@ -1,0 +1,19 @@
+package com.attornatus.project.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.attornatus.project.domain.repository.PessoaRepository;
+import com.attornatus.project.domain.service.CadastroPessoaService;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@RestController
+@RequestMapping("/pessoas")
+public class PessoaController {
+
+	private PessoaRepository repository;
+	private CadastroPessoaService service;
+	
+}
