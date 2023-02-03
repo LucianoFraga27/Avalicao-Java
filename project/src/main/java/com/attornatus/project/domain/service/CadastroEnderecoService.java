@@ -7,7 +7,6 @@ import com.attornatus.project.domain.model.Endereco;
 import com.attornatus.project.domain.model.Pessoa;
 import com.attornatus.project.domain.model.TipoEndereco;
 import com.attornatus.project.domain.repository.EnderecoRepository;
-import com.attornatus.project.domain.repository.PessoaRepository;
 
 import lombok.AllArgsConstructor;
 
@@ -20,17 +19,17 @@ public class CadastroEnderecoService {
 	
 	@Transactional
 	public Endereco cadastrar(Endereco endereco) {
-		/*
-		 * Implementar logica de :
-		 * Se não existir nenhum endereco com esse Id, 
-		 * Deixar como principal,
-		 * Se ja existir, apenas bote como secundario
-		 * */
 		
 		Pessoa pessoa = pessoaService.buscar(endereco.getPessoa().getId());
 		endereco.setPessoa(pessoa);
-		endereco.setTipoEndereco(TipoEndereco.PADRÃO);
+		if(endereco.getTipoEndereco() == null) {
+			endereco.setTipoEndereco(TipoEndereco.PADRÃO);
+		}  else {
+			endereco.setTipoEndereco(TipoEndereco.PRINCIPAL);
+		}
 		
 		return enderecoRepository.save(endereco);
 	}
+	
+
 }

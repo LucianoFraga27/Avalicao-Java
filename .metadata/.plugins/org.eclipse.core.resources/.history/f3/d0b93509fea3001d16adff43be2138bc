@@ -1,0 +1,3 @@
+NotBlank=Campo Obrigatorio
+Size=Texto de no Minimo '{2}' e Maximo '{1}' caracteres
+NotNull=Nessario Informar uma pessoa para poder inserir um endereco

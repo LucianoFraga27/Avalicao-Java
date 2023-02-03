@@ -15,6 +15,7 @@ import lombok.EqualsAndHashCode;
 @Entity
 public class Pessoa {
 	
+	
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,0 +1,12 @@
+insert into pessoa (id,nome,dataNascimento) values (1,'luciano',"27/02/2002");
+insert into pessoa (id,nome,dataNascimento) values (2,'carlos',"07/08/2001");
+insert into pessoa (id,nome,dataNascimento) values (3,'pedro',"12/11/2003");
+insert into pessoa (id,nome,dataNascimento) values (4,'marcos',"25/10/2004");
+insert into pessoa (id,nome,dataNascimento) values (5,'sabrina',"01/05/2001");
+insert into pessoa (id,nome,dataNascimento) values (6,'isabela',"20/12/2002");
+
+
+insert into endereco (logradouro,cep,numero,cidade,pessoa) values ('av. santa cruz', '123-1234', '593', 'Rio de janeiro', 1);
+insert into endereco (logradouro,cep,numero,cidade,pessoa) values ('av. cesario de melo', '123-1234', '1934', 'Rio de janeiro', 3);
+insert into endereco (logradouro,cep,numero,cidade,pessoa) values ('av. francisco real', '123-1234', '124', 'Rio de janeiro',1);
+insert into endereco (logradouro,cep,numero,cidade,pessoa) values ('av. brasil', '123-1234', '1', 'Rio de janeiro',2);
