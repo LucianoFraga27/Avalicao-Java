@@ -1642,3 +1642,6 @@
 2023-02-03 19:39:55,759 [Worker-135: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2023-02-03 19:39:55,759 [Worker-135: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2023-02-03 19:39:55,759 [Worker-135: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\lucas\Desktop\Attornatus Procuradoria Digital\project\src\test\resources
+2023-02-03 19:59:14,308 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped Server@7fe5c63d{STOPPING}[10.0.9,sto=0]
+2023-02-03 19:59:14,315 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@1d22e6af{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2023-02-03 19:59:14,327 [Stop Help Server] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@71b631bd{/help,null,STOPPED}
