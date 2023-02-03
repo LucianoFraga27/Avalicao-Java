@@ -1,0 +1,5 @@
+package com.attornatus.project.api.controller;
+
+public class PessoaEnderecoController {
+
+}

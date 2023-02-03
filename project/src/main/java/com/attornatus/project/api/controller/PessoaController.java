@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.attornatus.project.domain.model.Pessoa;
+import com.attornatus.project.domain.repository.EnderecoRepository;
 import com.attornatus.project.domain.repository.PessoaRepository;
 import com.attornatus.project.domain.service.CadastroPessoaService;
 
@@ -29,7 +30,8 @@ public class PessoaController {
 
 	private PessoaRepository repository;
 	private CadastroPessoaService service;
-
+	
+	private EnderecoRepository enderecoRepository;
 	
 	// Listando pessoas
 	@GetMapping
@@ -52,7 +54,6 @@ public class PessoaController {
 		return repository.findById(id).map(pessoa -> ResponseEntity.ok(pessoa))
 				.orElse(ResponseEntity.notFound().build());
 	}
-
 	
 	// Editando pessoas
 	@PutMapping("/{id}")

@@ -5,7 +5,9 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.attornatus.project.domain.model.Endereco;
+import com.attornatus.project.domain.model.Pessoa;
 import com.attornatus.project.domain.repository.EnderecoRepository;
 import com.attornatus.project.domain.service.CadastroEnderecoService;
 
@@ -22,23 +25,26 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("/enderecos")
 public class EnderecoController {
-	
+
 	private EnderecoRepository repository;
 	private CadastroEnderecoService service;
-	
-	
+
 	@GetMapping
 	public List<Endereco> listar() {
 		return repository.findAll();
 	}
-	
-	
+
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Endereco criarEndreco(@Valid @RequestBody Endereco endereco) {
 		return service.cadastrar(endereco);
 	}
+
 	
-	
+	// Encontrando pessoas
+	@GetMapping("/todos/{id}") // por Id
+	public List<Endereco> buscarEnderecos(@PathVariable Long id) {
+		return repository.findAllByPessoaId(id);
+	}
 
 }

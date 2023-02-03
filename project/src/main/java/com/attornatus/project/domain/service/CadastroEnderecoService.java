@@ -1,5 +1,7 @@
 package com.attornatus.project.domain.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +18,7 @@ public class CadastroEnderecoService {
 
 	private CadastroPessoaService pessoaService;
 	private EnderecoRepository enderecoRepository;
+	
 	
 	@Transactional
 	public Endereco cadastrar(Endereco endereco) {
