@@ -1,0 +1,21 @@
+package com.attornatus.project.api.exceptionhandler;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class EstruturaDosErros {
+
+	private Integer status;
+	private LocalDateTime momento;
+	private String titulo;
+	private List<CamposErrados> campos;
+	
+	@AllArgsConstructor
+	@Getter
+	public static class CamposErrados{
+		private String nome;
+		private String mensagem;
+	}
+}
