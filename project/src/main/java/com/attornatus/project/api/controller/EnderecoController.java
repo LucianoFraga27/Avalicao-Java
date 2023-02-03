@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -40,8 +41,18 @@ public class EnderecoController {
 		return service.cadastrar(endereco);
 	}
 
-	
-	// Encontrando pessoas
+	// Editando pessoas
+	@PutMapping("/{id}")
+	public ResponseEntity<Pessoa> atualizar(@PathVariable Long id, @Valid @RequestBody Endereco endereco) {
+		if (!repository.existsById(id)) {
+			return ResponseEntity.notFound().build();
+		}
+		endereco.setId(id);
+		endereco = service.cadastrar(endereco);
+		return ResponseEntity.noContent().build();
+	}
+
+	// Encontrando enderecos das pessoas por id
 	@GetMapping("/todos/{id}") // por Id
 	public List<Endereco> buscarEnderecos(@PathVariable Long id) {
 		return repository.findAllByPessoaId(id);

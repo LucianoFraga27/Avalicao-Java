@@ -1,6 +1,5 @@
 package com.attornatus.project.domain.service;
 
-import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,11 +23,13 @@ public class CadastroEnderecoService {
 	public Endereco cadastrar(Endereco endereco) {
 		
 		Pessoa pessoa = pessoaService.buscar(endereco.getPessoa().getId());
+		
 		endereco.setPessoa(pessoa);
-		if(endereco.getTipoEndereco() == null) {
-			endereco.setTipoEndereco(TipoEndereco.PADRÃO);
-		}  else {
+		
+		if(endereco.getTipoEndereco() != null) {
 			endereco.setTipoEndereco(TipoEndereco.PRINCIPAL);
+		} else {
+			endereco.setTipoEndereco(TipoEndereco.PADRÃO);
 		}
 		
 		return enderecoRepository.save(endereco);
