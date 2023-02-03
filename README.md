@@ -16,12 +16,12 @@ Opcionalmente, caso você consiga fazer o build da aplicação, poderá também 
 
 Qualidade de código
 
-Durante a implementação de uma nova funcionalidade de software solicitada, quais critérios você avalia e implementa para garantia de qualidade de software?
+#Durante a implementação de uma nova funcionalidade de software solicitada, quais critérios você avalia e implementa para garantia de qualidade de software?
 R:
 	Acredito que um software de qualidade é aquele que segue e executa de maneira eficaz o que foi pedido nas especificações do software. Porém é necessário seguir um padrão de desenvolvimento para que seu software não seja confunso para outros desenvolvedores. Por isso seguir regras de desenvolvimento é algo de extrema importante na vida de um programador.
 
 
-Em qual etapa da implementação você considera a qualidade de software?
+#Em qual etapa da implementação você considera a qualidade de software?
 	R:
 		Eu considero que o Tratamento de Exceptions é uma parte de 		extrema importancia na qualidade de software. A implementação de testes é 	uma  outra área fundamental.
 
