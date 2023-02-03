@@ -1,5 +1,6 @@
 package com.attornatus.project.domain.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -17,20 +18,22 @@ import lombok.EqualsAndHashCode;
 @Entity
 public class Endereco {
 
+	@ManyToOne
+	private Pessoa pessoa;
+	
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private String logradouro;
+	
 	private	String cep;
+	
 	private String numero;
+	
 	private String cidade;
 	
-	@ManyToOne
-	@JoinColumn(name="pessoa_id",nullable=false)
-	private Pessoa pessoa;
-	
 	@Enumerated(EnumType.STRING)
-	private TipoEndereco principal;
+	private TipoEndereco tipoEndereco;
 }

@@ -12,15 +12,19 @@ import lombok.AllArgsConstructor;
 @Service
 public class CadastroPessoaService {
 	
-	private PessoaRepository repository;
+	private PessoaRepository pessoaRepository;
+	
+	public Pessoa buscar(Long id) {
+		return pessoaRepository.findById(id).orElseThrow(null);//Implementar exception
+	}
 	
 	@Transactional
 	public Pessoa salvar(Pessoa pessoa) {
-		return repository.save(pessoa);
+		return pessoaRepository.save(pessoa);
 	}
 	
 	@Transactional
 	public void excluir(Long id) {
-		repository.deleteById(id);
+		pessoaRepository.deleteById(id);
 	}
 }

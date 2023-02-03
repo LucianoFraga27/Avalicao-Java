@@ -1,0 +1,5 @@
+package com.attornatus.project.controller;
+
+public class EnderecoController {
+
+}

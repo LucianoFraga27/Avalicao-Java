@@ -1,0 +1,21 @@
+package com.attornatus.project.domain.service;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.attornatus.project.domain.model.Endereco;
+import com.attornatus.project.domain.repository.EnderecoRepository;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Service
+public class CadastroEnderecoService {
+
+	private EnderecoRepository repository;
+	
+	@Transactional
+	public Endereco cadastrar(Endereco endereco) {
+		
+	}
+}

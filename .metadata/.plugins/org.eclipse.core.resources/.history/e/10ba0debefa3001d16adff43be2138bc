@@ -1,0 +1,45 @@
+package com.attornatus.project.domain.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Entity
+public class Endereco {
+
+	@ManyToOne
+	private Pessoa pessoa;
+	
+	@EqualsAndHashCode.Include
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="endereco_id")
+	private Long id;
+	
+	@Column(name="endereco_logradouro")
+	private String logradouro;
+	
+	@Column(name="endereco_cep")
+	private	String cep;
+	
+	@Column(name="endereco_numero")
+	private String numero;
+	
+	@Column(name="endereco_cidade")
+	private String cidade;
+	
+	@Column(name="endereco_tipo")
+	@Enumerated(EnumType.STRING)
+	private TipoEndereco tipoEndereco;
+}
