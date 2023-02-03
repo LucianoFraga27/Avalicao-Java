@@ -1,0 +1,26 @@
+package com.attornatus.project.teste;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+public class Regex {
+
+	public static void main(String[] args) {
+		
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		
+		String input = "272-02-2002";
+		try {
+	          format.parse(input);
+	          System.out.println("1");
+	     }
+	     catch(ParseException e){
+	    	 System.out.println("0");
+	     }
+		
+		
+		
+	}
+	
+}
+

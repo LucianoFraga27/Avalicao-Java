@@ -1,0 +1,26 @@
+package com.attornatus.project.teste;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+public class Regex {
+	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+	public static void main(String[] args) {
+		
+		
+		
+		
+	}
+
+	Integer isValidDate (String input) {
+	     try {
+	          format.parse(input);
+	          return 1;
+	     }
+	     catch(ParseException e){
+	          return 0;
+	     }
+	}
+	
+}
+

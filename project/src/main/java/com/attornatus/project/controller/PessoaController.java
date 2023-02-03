@@ -27,14 +27,14 @@ public class PessoaController {
 
 	private PessoaRepository repository;
 	private CadastroPessoaService service;
-	
+
 	
 	// Listando pessoas
 	@GetMapping
-	public List<Pessoa> listar(){
+	public List<Pessoa> listar() {
 		return repository.findAll();
 	}
-	
+
 	
 	// Adicionando pessoas
 	@PostMapping
@@ -43,18 +43,26 @@ public class PessoaController {
 		return service.salvar(pessoa);
 	}
 
-		
+
+	// Encontrando pessoas
+	@GetMapping("/{id}") // por Id
+	public ResponseEntity<Pessoa> buscar(@PathVariable Long id) {
+		return repository.findById(id).map(pessoa -> ResponseEntity.ok(pessoa))
+				.orElse(ResponseEntity.notFound().build());
+	}
+
+	
 	// Editando pessoas
 	@PutMapping("/{id}")
-	public ResponseEntity<Pessoa> atualizar(@PathVariable Long id, @RequestBody Pessoa pessoa){
-		if(!repository.existsById(id)) {
+	public ResponseEntity<Pessoa> atualizar(@PathVariable Long id, @RequestBody Pessoa pessoa) {
+		if (!repository.existsById(id)) {
 			return ResponseEntity.notFound().build();
 		}
 		pessoa.setId(id);
 		pessoa = service.salvar(pessoa);
 		return ResponseEntity.noContent().build();
 	}
-	
+
 	
 	// Excluindo pessoas
 	@DeleteMapping("/{id}")
@@ -65,8 +73,5 @@ public class PessoaController {
 		service.excluir(id);
 		return ResponseEntity.noContent().build();
 	}
-	
-	
-	
-	
+
 }
