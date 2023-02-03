@@ -1,0 +1,7 @@
+package com.attornatus.project.domain.service;
+
+import com.attornatus.project.domain.model.Endereco;
+
+public class CadastroEnderecoService {
+
+}
