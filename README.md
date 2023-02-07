@@ -18,13 +18,14 @@ Qualidade de código
 
 # Durante a implementação de uma nova funcionalidade de software solicitada, quais critérios você avalia e implementa para garantia de qualidade de software?
 R:
-	Acredito que um software de qualidade é aquele que segue e executa de maneira eficaz o que foi pedido nas especificações do software. Porém é necessário seguir um padrão de desenvolvimento para que seu software não seja confunso para outros desenvolvedores. Por isso seguir regras de desenvolvimento é algo de extrema importante na vida de um programador.
+	Acredito que um software de qualidade é aquele que segue e executa de maneira eficaz o que foi pedido nas especificações do software. Porém é necessário seguir um padrão de desenvolvimento para que seu software não seja confunso para outros desenvolvedores. Por isso seguir regras de desenvolvimento é algo de extrema importante na vida de um programador. Ou seja, A qualidade do software tem que ser considerada em todo processo de desenvolvimento. A qualidade na implementação (escrita do código, algoritmo e classes, nomes e colunas do banco de dados, configurações etc).
 
 
 # Em qual etapa da implementação você considera a qualidade de software?
-	R:
-		Eu considero que o Tratamento de Exceptions é uma parte de 		extrema importancia na qualidade de software. A implementação de testes é 	uma  outra área fundamental.
-
+R:
+	Eu considero que o Tratamento de Exceptions é uma parte de extrema importancia na qualidade de software. Os testes unitário também são uma forma de garantir a qualidade. Em linhas gerais, um bom software foi implementado com qualidade bem testado.
+	
+	
 # Desafio Java
 
 Usando Spring boot, crie uma API simples para gerenciar Pessoas. Esta API deve permitir:  
